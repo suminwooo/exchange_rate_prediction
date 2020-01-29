@@ -1,6 +1,7 @@
 exchange rate prediction
 
-This project is to predict exchange rate using deep-learning. I used LSTM with usd/krw. 
+This project is to predict exchange rate using deep-learning.  
+This model used usd/krw exchange rate.   
 
 00. 통화량 변화율 정리 
 
