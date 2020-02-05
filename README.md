@@ -37,3 +37,6 @@ This model used usd/krw exchange rate.
 
 6. facebook prophet_parameter_scale  
 -> 5번과 동일한 데이터
+-> 5번에서 스케일만 (0.05,0.95)로 조정해주었으나 큰차이를 보이지 않음.
+
+-----------------
