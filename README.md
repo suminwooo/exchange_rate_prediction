@@ -20,7 +20,7 @@ This model used usd/krw exchange rate.
 
 ----------------------
 
-4. usd_krw_prediction(facebook prophet)    
+4. facebook prophet     
 -> 환율 데이터중 2019년의 데이터를 이용하여 2020년 1월을 예측함.   
 -> holiday는 주말과 공휴일로 잡고, 파라미터를 수정하지 않은 상태에서는    
 그래프의 모양이 단순 추세만 보이고 있다. 또한 주기성은 전혀 보이지 않음.    
@@ -29,9 +29,11 @@ This model used usd/krw exchange rate.
 이를 weekly를 주중만 나오게 설정하고 파라미터 수정하는 식으로 갈 예정.   
 
 
-5. usd_krw_prediction(facebook prophet)  
--> 4번과 같은 데이터로 구성함.
+5. facebook prophet_parameter    
+-> 4번의 데이터와 2018년12월~2019년 11월 데이터를 활용해 2019년 12월도 같이 예측
 -> 파라미터를 수정하고 실제 값과 예측값을 비교함  
--> 이와 유사하여 다양한 데이터셋을 나누어 실험을 해봄  
--> 총 10개의 데이터셋으로 한 결과 한개의 셋에서는 크게 보일지라도 스케일을 조정하면서 한다면 나쁘지않은 모델임을 확인할 수 있다.  
--> 이와 유사하게 스케일을 조정하여 6번에서 실험할 예정
+-> prophet을 이용하여 정확한 값보다는 추세를 예측하기 위해 이용함.    
+-> 이와 유사하게 스케일을 조정하여 6번에서 실험할 예정  
+
+6. facebook prophet_parameter_scale  
+-> 5번과 동일한 데이터
