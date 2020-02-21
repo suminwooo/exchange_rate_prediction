@@ -7,20 +7,20 @@ This model used usd/krw exchange rate.
 
  --------------------------------------
 
-1. 네이버 금융 뉴스 크롤링  
+01. 네이버 금융 뉴스 크롤링  
 -> 추후 텍스트 마이닝 하기 위해서 네이버 금융 뉴스 top10 제목만 뽑음  
   
   ------------------
   
-2. usd_krw_prediction(using LSTM, 10day prediction(using 10days data))  
+02. usd_krw_prediction(using LSTM, 10day prediction(using 10days data))  
 -> RMSE : 0.0489, 테스트결과 실제 데이터에 따라가는 모습을 보임  
 
-3. usd_krw_prediction(using LSTM, 1day prediction(using 1days data))  
+03. usd_krw_prediction(using LSTM, 1day prediction(using 1days data))  
 -> RMSE : 0.0456, 테스트결과 실제 데이터에 비슷한 모습을 보임  
 
 ----------------------
 
-4. facebook prophet     
+04. facebook prophet     
 -> 환율 데이터중 2019년의 데이터를 이용하여 2020년 1월을 예측함.   
 -> holiday는 주말과 공휴일로 잡고, 파라미터를 수정하지 않은 상태에서는    
 그래프의 모양이 단순 추세만 보이고 있다. 또한 주기성은 전혀 보이지 않음.    
@@ -29,19 +29,19 @@ This model used usd/krw exchange rate.
 이를 weekly를 주중만 나오게 설정하고 파라미터 수정하는 식으로 갈 예정.   
 
 
-5. facebook prophet_parameter    
+05. facebook prophet_parameter    
 -> 4번의 데이터와 2018년12월~2019년 11월 데이터를 활용해 2019년 12월도 같이 예측
 -> 파라미터를 수정하고 실제 값과 예측값을 비교함  
 -> prophet을 이용하여 정확한 값보다는 추세를 예측하기 위해 이용함.    
 -> 이와 유사하게 스케일을 조정하여 6번에서 실험할 예정  
 
-6. facebook prophet_parameter_scale  
+06. facebook prophet_parameter_scale  
 -> 5번과 동일한 데이터
 -> 5번에서 스케일만 (0.05,0.95)로 조정해주었으나 큰차이를 보이지 않음.
 
 -----------------
 
-7. arima model
+07. arima model
 -> prophet와 같은 데이터를 사용하여 예측함
 -> arima모델의 경우 통계적인 관점과 직관적으로 보았을때 유의한지 유의하지 않은지를 판단이 다르기때문에    
 통계학적 관점으로 따르지않고 단기적인 추세만 확인할 예정    
@@ -49,7 +49,7 @@ This model used usd/krw exchange rate.
 -> prophet과 마찬가지로 스케일을 조정해여 시도해볼 예정.   
 
 --------------------------
-8. DNN model
+08. DNN model
 -> prophet과 arima 모델로만의 한계가 있어서 신경망을 사용하여 다시 예측해봄.    
 -> 변수로는 이자율로 6개월 한국libor, 미국libor, 종목으로 s&p500과 코스피200을 사용하였다.    
 -> 4개의 변수를 사용하여 환율을 예측. 테스트셋은 하루 데이터를 넣고 다음날 환율을 예측함.  
@@ -57,7 +57,7 @@ This model used usd/krw exchange rate.
 -> RMSE는 arima모델과 prophet보다는 잘 나왔으며 up&down 예측은 한달은 낮지만 다음 5일은 잘 맞춘편이다.    
 -> 점차 신경망의 구성을 다르게 하면서 loss값을 고쳐볼 예정.    
 
-9. DNN model_yr  
+09. DNN model_yr  
 -> 8번과 같이 모델을 만든후 한달예측이 아닌 11개월을 예측함.  
 -> 지금의 모델은 RMSE와 예측이 8번보다는 잘나오지만 파라미터를 수정하였을때 더 좋은 결과값을 보였다.  
 -> 모델이 최적화가 되어있지 않아서 커널이 쉽게 죽는 경향을 보인다.  
